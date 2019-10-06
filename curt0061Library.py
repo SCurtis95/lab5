@@ -1,8 +1,8 @@
 def getVertical():
-    import time
+    
     x = 37
     for y in range(0,127,1):
-        lcd.set_pixel(x,y,1)
+        lcd.set_pixel(37,y,1)
     lcd.show()
     time.sleep(3)
     lcd.clear()
@@ -17,17 +17,16 @@ def getHorizontal():
     lcd.clear()
  
 
-def getStaircase():
+def getStaircase(width, height):
     x = 45
     y = 34
     lcd.set_pixel(x,y,1)
     for x in range (0,63):
-        w = x + 1
+        width = x + 1
         lcd.set_pixel(x,y,1)
-        h = y + 1
+        height = y + 1
         lcd.set_pixel(x,y,1)
     lcd.show() 
-
 
 def getDisplay():
     x = random.randint(1,127)
@@ -41,6 +40,6 @@ def getDisplay():
 
 def clearBacklight():
     lcd.clear()
-    backlight.set_all(255,255, 0)
+    backlight.set_all(255,255, 255)
     time.sleep (2) 
 

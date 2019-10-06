@@ -1,7 +1,9 @@
-import lab5
+import curt0061Library
 from gfxhat import lcd, backlight
 import time
 import random
+
+width, height = lcd.dimensions()
 
 print("Welcome to the testing section")
 print("Task 1: Creates a vertical Line on the GFXHat.")
@@ -15,15 +17,15 @@ testnum = int(test)
 
 while testnum > 0:
     if testnum == 1:
-        lab5.getVertical()
+        curt0061Library.getVertical()
     elif testnum == 2:
-        lab5.getHorizontal()
+        curt0061Library.getHorizontal()
     elif testnum == 3:
-        lab5.getStaircase()
+        curt0061Library.getStaircase(width, height)
     elif testnum == 4:
-        lab5.getDisplay()
+        curt0061Library.getDisplay()
     elif testnum == 5:
-        lab5.clearBacklight()
+        curt0061Library.clearBacklight()
     elif testnum > 5:
         break
 
