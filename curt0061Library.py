@@ -1,49 +1,46 @@
-
-def calculateAreaOfCircle():
-    import math
-    radius = input("Please enter a radius: ")
-
-    radiusInt = int(radius)
-
-    areaOfCircle = (math.pi * radiusInt ** 2)
-
-    aoC = str(areaOfCircle)
-
-    calcmpg = print("The area of the circle is " + aoC)
-    return calcmpg
+def getVertical():
+    import time
+    x = 37
+    for y in range(0,127,1):
+        lcd.set_pixel(x,y,1)
+    lcd.show()
+    time.sleep(3)
+    lcd.clear()
 
 
+def getHorizontal():
+    y = 68
+    for x in range(0,63,1):
+        lcd.set_pixel(x,y,1)
+    lcd.show()
+    time.sleep(3)
+    lcd.clear()
+ 
 
-def calculateMPG():
-    miles = input("Please enter in the number of miles you have driven: ")
-    gas = input("Now, in gallons, enter in how much gas you have used: ")
-
-    milesInt = int(miles)
-    gasInt = int(gas)
-
-    mpgInt = (milesInt / gasInt)
-    mpg = str(mpgInt)
-
-    print("You have been driving " + mpg + " miles per gallon")
-
-
-
-def convertFahrenheitToCelsius():
-    temp = input("Please enter in the degrees in fahrenheit: ")
-
-    fahTemp = int(temp)
-
-    celsius = ((fahTemp - 32) / 1.8)
-    cel = round(celsius)
-    finalTemp = str(cel)
-
-    print("The temprature " + temp + " in fahrenheit is " + finalTemp + " degrees in celsius")
+def getStaircase():
+    x = 45
+    y = 34
+    lcd.set_pixel(x,y,1)
+    for x in range (0,63):
+        w = x + 1
+        lcd.set_pixel(x,y,1)
+        h = y + 1
+        lcd.set_pixel(x,y,1)
+    lcd.show() 
 
 
-def calcDistance(x,x1,y,y1):
+def getDisplay():
+    x = random.randint(1,127)
+    y = random.randint(1,63)
+    lcd.set_pixel(x,y,1)
+    lcd.show()
+    time.sleep(4)
+    lcd.clear()
     
-    import math
-    points = math.sqrt((x1 - x)**2 + (y1 - y)**2)
-    dist = int(points)
-    calc = print("The total distance between points is : ", dist)
-    return calc
+
+
+def clearBacklight():
+    lcd.clear()
+    backlight.set_all(255,255, 0)
+    time.sleep (2) 
+
